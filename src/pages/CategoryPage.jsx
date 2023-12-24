@@ -14,7 +14,7 @@ export const CategoryPage = () => {
   const { category } = useParams();
 
   const [imgCategory] = imgs.filter(
-    (img) => img === `/src/assets/${category.toLowerCase()}.png`
+    (img) => img === `/src/assets/${category}.png`.toLowerCase()
   );
 
   const [questionsFiltered, setquestionsFiltered] = useState(
