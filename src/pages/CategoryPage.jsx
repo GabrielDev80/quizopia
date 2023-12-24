@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Question } from '../components/Question';
 import { questions, imgs } from '../data';
+import images from '../components/images';
 
-// Funcion para barajar las preguntas de cada categoria y tambien reducirla al numero 5
 const shuffleArray = (array) => {
   const newArray = array.sort(() => Math.random() - 0.5);
   return newArray.slice(0, 5);
@@ -13,9 +13,7 @@ export const CategoryPage = () => {
   // Leer el parametro de la URL
   const { category } = useParams();
 
-  const [imgCategory] = imgs.filter(
-    (img) => img === `/src/assets/${category}.png`.toLowerCase()
-  );
+  const imgCategory = images[category.toLowerCase()];
 
   const [questionsFiltered, setquestionsFiltered] = useState(
     questions.filter((questions) => questions.category === category)
