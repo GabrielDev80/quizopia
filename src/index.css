@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles */
+.category-card-text {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  /* body,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 50%; 
+    word-break: break-word; 
+  } */
+  .category-card-text {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}
